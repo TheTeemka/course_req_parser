@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"log/slog"
 	"slices"
 	"strings"
 
@@ -39,9 +40,17 @@ func getAllCourcesByPriorty(filename string, tags []string, passedCourses map[st
 		abbr := escapeNewLine(row[1])
 		fullname := escapeNewLine(row[2])
 
-		if req := escapeNewLine(row[5]); req != "" {
+		if req := escapeNewLine(row[5]); req != "" { //req
 			req = simplifyReq(req)
 			if !Resolve(req, passedCourses) {
+				continue
+			}
+		}
+
+		if req := escapeNewLine(row[7]); req != "" { //anti-req
+			req = simplifyReq(req)
+			if Resolve(req, passedCourses) {
+				slog.Info("Skipping course due to anti-req", "course", abbr, "anti-req", req)
 				continue
 			}
 		}
@@ -75,6 +84,11 @@ func contains(s string, targets []string) bool {
 }
 
 func main() {
+	// req := "LING 273 Survey of Research Methods in Linguistics (2158) (C- and above) AND (LING 375 The Art and Science of Analyzing Languages: Morphosyntax of the World's Languages (6237) (C- and above) OR LING 377 Historical Linguistics (7972) (C- and above) OR LING 461 Experimental semantics (7196) (C- and above) OR LING 473 Advanced Empirical Methods in Linguistics (6244) (C- and above))"
+
+	// fmt.Println(simplifyReq(req))
+
+	// return
 	reqFileName := "req.xlsx"
 	passedCourses := ToMap([]string{
 		"WCS 150",

@@ -99,7 +99,7 @@ Prior 3: 52 courses
 	ANT 214/SOC 214      (Qualitative Methods)
 	ANT 285/SOC 212      (Food and Society)
 
-Prior 4: 114 courses
+Prior 4: 111 courses
 	BBA 208              (Data Analytics for Business)
 	BBA 210              (Fundamentals of Marketing)
 	BBA 230              (Entrepreneurship)
@@ -188,8 +188,6 @@ Prior 4: 114 courses
 	CEE 302              (Geotechnical Engineering)
 	CEE 304              (Fluid Mechanics)
 	CEE 463              (Individual Research Project in Civil & Environmental Engineering 1)
-	CSCI 111             (Web Programming and Problem Solving)
-	CSCI 115             (Programming Fundamentals)
 	CSCI 341             (Database Systems)
 	CSCI 361             (Software Engineering)
 	CSCI 390             (Artificial Intelligence)
@@ -203,7 +201,6 @@ Prior 4: 114 courses
 	ELCE 304L            (Computer Networks Laboratory)
 	ELCE 455             (Machine Learning with Python)
 	ELCE 466             (RF and Microwave Circuits)
-	ENG 101              (Programming for Engineers)
 	ENG 100              (Introduction to Engineering)
 	ENG 200              (Engineering Mathematics III (Differential Equations and Linear Algebra))
 	ENG 400              (Capstone Project)
